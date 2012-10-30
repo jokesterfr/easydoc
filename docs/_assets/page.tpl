@@ -14,7 +14,7 @@
 				</button>
 			</form>
         </header>
-       	<div class="main-title">Your product documentation</div>
+       	<div class="main-title">Your product {{title}}</div>
         <nav>
 			<h1>Page index</h1>
 			<ul>
