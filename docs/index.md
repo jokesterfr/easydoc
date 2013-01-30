@@ -1,5 +1,7 @@
 # Welcome to Easydoc !
 
+[Go forward](../SubFolder/)
+
 ## What's the deal ?
 
 Easydoc is a tiny web server that publish your documentation written in 

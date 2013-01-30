@@ -1,0 +1,49 @@
+Notes d'explication sur EASYDOC
+===============================
+
+## Fonctionnement général
+
+* Les templates Mustache/Handlebars sont compilés par le navigateur
+* Les documents (multi)Markdown sont gérés par le serveur lui même
+
+## Services Web du Serveur
+
+La documentation est prioritaire sur le reste. On la veut libre de prendre les noms qu'elle veut, à l'exception
+du mot clef 'public' (configurable) pour le dossier racine, qui lui est dédié à l'exécution du service côté client (cf ci-après)
+
+### Documentation delivery
+
+	GET  /subdir/index.md
+		-------> options.root + '/subdir/index.md'
+		{ title:"azeerrtty", content:"<h1>fldkfjfdk</h1><p>dqsdsd</p>" }
+	GET  /photo.png
+		-------> photo.png
+
+Un lien vers une autre partie de la documentation pourra être effectué de la sorte en Markdown :
+
+	[Nouvelles facettes de libuv](../brother_dir/libuv.md)
+
+De la même manière tout document peut être inclu avec le path relatif à la page considérée. Le serveur easy doc se chargera de lui même d'ajouter le chemin nécessaire à la formation du path absolu.
+
+### Templates and client
+
+	GET  /
+		---->  __dirname+'../public/index.html'
+	GET  /public/css/style.css
+		---->  __dirname+'../public/css/style.css'
+	POST /public/search keyword="bla bla bla"
+
+### Les services WebSocket
+
+* updateSummary
+
+* updateFile - notifie de la mise à jour du document markdown actuellement visionné
+
+* updateRessource
+
+
+### Support d'autres formats de documentation
+
+Typiquement les fichiers __*.md__, __*.markdown__, __*.mdown__ seront interprétés comme des fichiers (multi)Markdown
+On pourra éventuellement envisager dans un second temps l'affichage d'autres éléments, tels des documents au format __*.txt__, __*.html__, __*.doc__, __*.odt__ ...
+ 
