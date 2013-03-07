@@ -1,0 +1,9 @@
+$if(toc)$
+<nav id="table-of-contents">
+$toc$
+</nav>
+$endif$
+
+<article id="document">
+$body$
+</article>

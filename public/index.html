@@ -2,12 +2,38 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-        <title>{{title}}</title>
-        <link type="text/css" href="public/styles/main.css" rel="stylesheet">
-        <script src="public/scripts/socket.io.js"></script>
-        <script src="public/scripts/handlebars.js"></script>
-        <script src="public/scripts/main.js"></script>
+        <title>Easydoc</title>
+
+        <!-- Styles -->
+        <link type="text/css" href="/public/style/main.css" rel="stylesheet">
+        <link type="text/css" href="/public/style/pandoc.css" rel="stylesheet">
+
+        <!-- Lib dependencies -->
+		<script src="/public/js/lib/handlebars.js"></script>
+        <script src="/public/js/lib/socket.io.js"></script>
+        <script src="/public/js/lib/handlebars.runtime.js"></script>
+
+		<!-- Templates -->
+        <script src="/public/build/templates.js"></script>
+
+        <script src="/public/js/main.js"></script>
+        <!--[if lt IE 9]>
+		    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	</head>
 	<body class="page">
-		<h1>Ceci est un test</h1>
+		<header>
+			<h1>Easydoc</h1>
+			<form class="search" method="post" action="search">
+				<input type="search" name="searched" placeHolder="quicksearch..."/>
+				<button>
+					<img src="/public/img/search.png"/>
+				</button>
+			</form>
+        </header>
+        <div id="main">
+			<nav id="tree"></nav>
+			<div id="page"></div>
+        </div>
+	</body>
 </html>

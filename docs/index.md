@@ -1,8 +1,8 @@
 # Welcome to Easydoc !
 
-[Go forward](../SubFolder/)
+[Go forward](./SubFolder/)
 
-## What's the deal ?
+## What's the deal ???
 
 Easydoc is a tiny web server that publish your documentation written in 
 [markdown](http://daringfireball.net/projects/markdown/ "markdown official website").
@@ -10,9 +10,7 @@ Easydoc is a tiny web server that publish your documentation written in
 
 It provides you a file index for browsing, and a full-text search.
 
-
 It's very basic, and very easy to use and customize.
-
 
 ## Installation
 
@@ -25,8 +23,6 @@ It's very basic, and very easy to use and customize.
 
 Once the server is running, simply drops your documentation files written in 
 markdown and with the 'md' extension in the _docs_ folder.
-
-
 Let's say your file is named 'myfile.md'
 With a browser, go to [http://localhost/myfile.md]: that's it !
 
@@ -61,6 +57,12 @@ Here is the command line documentation of the server:
         -h, --host [0.0.0.0]  Hostname of the created Http server.
         --no-cache            Disable mustache template caching (for dev purposes)
         
+``` python
+from clement import *
+class toto:
+    self.toto(a):
+        return a
+```
 
 ## Are their limitations ?
 

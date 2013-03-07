@@ -1,0 +1,13 @@
+$body$
+#easy-doc-block-cut-tag#
+$toc$
+#easy-doc-block-cut-tag#
+$title$
+#easy-doc-block-cut-tag#
+$date$
+#easy-doc-block-cut-tag#
+$lang$
+$for(author)$
+#easy-doc-block-cut-tag#
+$author$
+$endfor$

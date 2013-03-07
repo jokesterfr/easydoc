@@ -47,3 +47,31 @@ De la même manière tout document peut être inclu avec le path relatif à la p
 Typiquement les fichiers __*.md__, __*.markdown__, __*.mdown__ seront interprétés comme des fichiers (multi)Markdown
 On pourra éventuellement envisager dans un second temps l'affichage d'autres éléments, tels des documents au format __*.txt__, __*.html__, __*.doc__, __*.odt__ ...
  
+
+
+
+PRECOMPILER LES TEMPLATES HANDLEBARS
+
+http://stackoverflow.com/questions/8659787/using-pre-compiled-templates-with-handlebars-js-jquery-mobile-environment/14740753#14740753
+
+http://stackoverflow.com/questions/13729882/using-multiple-pre-compiled-templates-with-handlebars-js-multiple-http-request
+
+
+TODO
+=======================
+des build a améliorer, voir compresser/minifier si possible (déjà tester si ça marche en l'état...)
+
+qui pourra rejoindre ./build/libs.min.js
+et build/styles.css
+build/lang/FR-fr.json
+
+
+RAF
+========================
+* Regrouper les templates tree.tpl et page.tpl
+* Tester la mise à jour selon WebSocket
+* Ajouter le TOC en plus du summary
+* Améliorer la mise en page en pensant aux devices tactiles, paneaux déroulants de chaque côté pour la navigation extra document ( à gauche) et intra document (à droite)
+* Style des panneaux à améliorer
+* Faire des icones sympas pour easy doc (un truc bien caligraphié pour en haut à gauche)
+* Voir comment faire des partials et des helpers pour la traduction notamment (et pourquoi pas des éléments tels que le code source etc à coloriser ? Comment customiser ça avec pandoc ???)
