@@ -23,6 +23,12 @@ body {
     background-repeat: repeat;
 }
 
+::-moz-selection,
+::selection {
+    background: #4D90FE;
+    color: rgba(255,255,255,.9);
+}
+
 @font-face {
 	font-family: "SoulHandwriting";
 	src: url('/public/font/SoulHandwriting.ttf');
