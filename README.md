@@ -8,44 +8,37 @@ Easydoc is a tiny web server that publish your documentation written in
 
 It provides you a file index for browsing, and a full-text search.
 
-
 It's very basic, and very easy to use and customize.
-
 
 ## Installation
 
 1. You'll need the appropriate [NodeJs](http://nodejs.org/#download) installation on your system.
 2. Download the [latest version](https://github.com/feugy/easydoc/zipball/master) of easydoc and unzip it
-3. From the command line, build it: > npm install -g
-4. Also from the command line, run it > easydoc
+3. From the command line, build it with: `npm install -g`
+4. Also from the command line, run it: `easydoc`
 
 ## How can I use it ?
 
 Once the server is running, simply drops your documentation files written in 
 markdown and with the 'md' extension in the _docs_ folder.
+Let's say your file is named _myfile.md_, with a browser, 
+go to [http://localhost/myfile.md](http://localhost/myfile.md).
 
-
-Let's say your file is named 'myfile.md'
-With a browser, go to [http://localhost/myfile.md]: that's it !
-
-If there are multiple files in the directory, you can sort the files by prefixing them with an arbitrary string and two underscores:
-aaa\_\_firstfile.md, aab\_\_secondfile.md, ..., z\_\_lastfile.md
-
-The pages mustache tag will contain the list of files, sorted, with the prefix (XXX\_\_) and extension removed.
-
-And, when you request the root directory, the page rendered will be the first element of this same list.
+That's it !
 
 
 ## How do I customize the look&feel ?
 
-For the markup, just edit the two template files inside the __assets_ folder:
+You can find all the client-side files in the _./public_ directory:
 
-- page.tpl. It displays a single page with the file index and search box.
-- search.tpl. It shows the search results.
+- _./public/style_. contain the css files, for rendering customizations
+- _./public/tpl_. contain the templates
+- _./public/build_. contain aggregated/minified stuff, for performance
 
-They are using the [mustache](http://mustache.github.com/) templating language. Very easy to use.
+Templates are using the [handlebars](http://handlebarsjs.com/) templating language, it is based on [mustache](http://mustache.github.com/) syntax, very easy to use.
+They are pre-compiled at run time by the server, into one single _templates.js_ file. [Pre-compiling](handlebarsjs.com/precompilation.html) handlebars template make it easier for the browser to process parsing. _handlerbars.runtime.js_ is a subset of the handlebars library, a lower file to download...
 
-Fot rendering customizations, all is in the style.css file.
+Fot rendering customizations, feel free to customize the _style/style.css_ file.
 
 
 ## I need to customize the root folder !
@@ -66,15 +59,43 @@ Here is the command line documentation of the server:
         -h, --host [0.0.0.0]  Hostname of the created Http server.
         --no-cache            Disable mustache template caching (for dev purposes)
         
+``` python
+from clement import *
+class toto:
+    self.toto(a):
+        return a
+```
+
+## Well this is great, but isn't that feugy's work?
+
+I actually forked it to break limitations, and enhance markdown parsing ;)
+
+My [easydoc fork](https://github.com/jokesterfr/easydoc) add some features to feugy's work:
+
+- Display the docs file tree
+- Dynamic table of contents
+- Markdown parsed with pandoc
+- Templating engine switched from mustache to handlebars
+- Support of pre-compiled templates
+- Autonomous _./public_ folder for client-side application
+- Supporting of subfolders, _index.md_ should be the default file to look at
+- Editing a markdown file auto-magically updates the client (if document is browsed)
 
 ## Are their limitations ?
 
-Yes, plenty ! But i'll enrich it latter ^_^
+Yes, plenty !
 
-- all markdown files at the same level, in the same folder. No sub-folders.
-- assets (page.tpl, search.tpl, style.css, images) must be in the __assets_ folder inside the document root.
-- no page templating (mustache) in plain html file.
-- markdown files must have the .md extension.
+- Async get erros not handled
+- File deletion not supported
+- Ugly file tree 
+- File tree to update on file system changes
+- Markdown files must have the .md extension
+- Impossible to display raw markdown
+- No editing form
+- Search functionnality has not been checked again
+- Tests are fucked up
+- I'm not satisfied of express routes naming I chose
 
 ---
-  have fun !
+
+Have fun !
