@@ -397,6 +397,30 @@ nav#table-of-contents a.viewed {
 		repeat-x 0 90%;
 }
 
+#document h2 {
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 1em;
+    margin-left: -1em;
+}
+#document h2 > a {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#document h3 {
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 1em;
+    margin-left: -0.5em;
+}
+#document h3 > a {
+    color: #333333;
+    font-weight: normal;
+    text-decoration: none;
+}
+
 #browser {
     min-width:300px;
     padding: 0;
