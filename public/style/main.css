@@ -58,6 +58,32 @@ pre {
 	border-left: 1px solid #ddd;
 }
 
+table {
+    background-color: white;
+    border-radius: 6px 6px 8px 6px;
+    box-shadow: 2px 3px 1px rgba(0,0,0,.1);
+    border-top: 1px solid #e5e5e5;
+    border-left: 1px solid #ddd;
+    border-collapse: collapse;
+}
+th {
+    padding:0.6ex 1ex;
+}
+td {
+    padding:0.4ex 1ex;
+}
+table thead th {
+    border-bottom:1px solid #ddd;
+    padding-bottom: 3px;
+}
+
+table tbody tr:first-child td {
+    padding-top: 12px;
+}
+table tbody tr:last-child td {
+    padding-bottom: 12px;
+}
+
 a { color: #3D80EE  }
 a:hover { color: #1D60CE  }
 a:visited { color: #4D60CE  }

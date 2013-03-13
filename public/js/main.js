@@ -135,10 +135,10 @@ function transferComplete(res, name) {
 	}
 
 	// Change links behaviour
-	var links = document.querySelectorAll('a');
+	var links = document.querySelectorAll('#document a');
 	for (var i in links) {
 		var link = links.item(i);
-		if(!link.parentNode) return;
+		if(!link || !link.parentNode) return;
 		var href = link.getAttribute('href');
 		var newLink = link.cloneNode(true);
 		newLink.addEventListener('click', function(evt) {
@@ -166,11 +166,13 @@ var checkHeight = function(evt) {
 	var links = document.querySelectorAll('#table-of-contents a');
 	for (var i in links) {
 		var link = links.item(i);
-		var anchorElt = document.querySelector(link.getAttribute('href'));
-		if ((anchorElt.offsetTop - scrollTop) > 0 && (anchorElt.offsetTop + anchorElt.offsetHeight) < scrollBottom) {
-			link.classList.add('viewed');
-		} else {
-			link.classList.remove('viewed');
+		if (link) {
+			var anchorElt = document.querySelector(link.getAttribute('href'));
+			if ((anchorElt.offsetTop - scrollTop) > 0 && (anchorElt.offsetTop + anchorElt.offsetHeight) < scrollBottom) {
+				link.classList.add('viewed');
+			} else {
+				link.classList.remove('viewed');
+			}
 		}
 	};
 }
