@@ -88,6 +88,16 @@ a { color: #3D80EE  }
 a:hover { color: #1D60CE  }
 a:visited { color: #4D60CE  }
 
+div.figure {
+    display: table;
+}
+p.caption {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+}
+
 /*****************************************************************************\
  *                                                                            *
  *   Header                                                                   *
