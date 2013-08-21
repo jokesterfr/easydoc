@@ -1,6 +1,6 @@
 {
 	"name": "easydoc",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"description": "A simple technical documentation site with markdown files",
 	"contributors": [
 		"feugy <damien.feugas@gmail.com>",
@@ -20,13 +20,13 @@
 	},
 	"main": "./lib/easydoc",
 	"dependencies" : {
-		"express": "3.1.0",
-		"commander": "1.0.0",
-		"socket.io":"0.9.11",
+		"express": "3.3.5",
+		"commander": "2.0.0",
+		"socket.io":"0.9.16",
 		"handlebars":"1.0.8",
 		"async":"0.2.5"
 	},
-		"devDependencies": {
+	"devDependencies": {
 		"mocha": "1.3.0",
 		"request": "2.9.202",
 		"should": "0.6.3",
@@ -37,6 +37,6 @@
 	},
 	"license": "LGPL v3",
 	"engine": {
-		"node": ">=0.6"
+		"node": ">=0.8"
 	}
 }

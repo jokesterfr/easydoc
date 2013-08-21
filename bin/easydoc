@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 var cli = require('commander');
 var easydoc = require('../lib/easydoc');
+var check = require('../lib/check');
+var pkg = require('../package');
 
-cli.version('0.1.0')
-  .option('-r, --root [docs]', 'Absolute or relative path to the root folder containing static and markdown files.', String, 'docs')
-  .option('-t, --title label', 'Title of the site as printed in the tab or title bar of the browser.', String, 'Easydoc')
+// Commander parameters
+cli.version( pkg.version )
+  .option('-r, --root [docs]', 'Absolute or relative path to the root folder containing documentation', String, 'doc')
+  .option('-t, --title label', 'Title of the site as printed in the tab or title bar of the browser', String, 'Easydoc')
   .option('-p, --port [80]', 'Local port of the created Http server.', parseInt, 80)
-  .option('-h, --host [0.0.0.0]', 'Hostname of the created Http server.', String, '127.0.0.1')
   .option('--no-cache', 'Disable mustache template caching (for dev purposes)')
   .parse(process.argv);
 
-// Launches the server on the given host and port.
-easydoc.start(cli);
+// Launches the server after checking inputs
+check(cli, function(cli) {
+	easydoc.start(cli);
+});
